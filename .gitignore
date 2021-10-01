@@ -3,6 +3,7 @@
 !*.c
 !*.h
 !.gitignore
+!env.sh
 !Makefile
 !LISCENSE
 !README.md
