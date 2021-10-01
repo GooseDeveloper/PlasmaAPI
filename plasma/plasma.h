@@ -7,3 +7,5 @@
 
 void plasmaInitialize(void);
 void plasmaTerminate(void);
+
+void plasmaErrornDie(const char * message);
