@@ -29,3 +29,5 @@ void plasmaCreateWindow(PlasmaWindow * target, PlasmaWindowConfig * config);
 void plasmaExecuteWindow(PlasmaWindow * window, PlasmaCallback * update, void * arg);
 
 void plasmaDeactivateWindow(PlasmaWindow * window);
+
+const PlasmaWindowConfig * plasmaGetWindowConfig(PlasmaWindow * window);

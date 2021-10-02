@@ -1,7 +1,8 @@
 CC = clang
-CFLAGS = -I. -Wall -fPIC -ansi
+CFLAGS = -I. -Wall -fPIC -ansi $(shell pkg-config --cflags sdl2)
 
-PLASMA = plasma/libplasma.so
+PLASMA = $(PWD)/plasma/libplasma.so
+PLASMALIBS = $(shell pkg-config --libs sdl2)
 
 LDLIBS = $(PLASMA)
 
@@ -13,7 +14,7 @@ debug: CFLAGS += -g
 debug: $(BINS)
 
 $(PLASMA): plasma/plasma.o plasma/graphics.o plasma/sdl.o
-	$(CC) $^ -shared -o $@
+	$(CC) $^ -shared -o $@ $(PLASMALIBS)
 
 clean:
 	rm -f $(BINS) plasma/*.o

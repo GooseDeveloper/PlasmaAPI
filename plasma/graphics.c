@@ -52,3 +52,8 @@ void plasmaDeactivateWindow(PlasmaWindow * window)
 {
 	window->active = false;
 }
+
+const PlasmaWindowConfig * plasmaGetWindowConfig(PlasmaWindow * window)
+{
+	return window->source;
+}
