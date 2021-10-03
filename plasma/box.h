@@ -5,8 +5,8 @@
 typedef struct PlasmaBox PlasmaBox;
 
 typedef struct PlasmaBoxConfig {
-    int width, height;
-    int xpos, ypos;
+	int width, height;
+	int xpos, ypos;
 } PlasmaBoxConfig;
 
 extern const int plasmaBoxEntity;

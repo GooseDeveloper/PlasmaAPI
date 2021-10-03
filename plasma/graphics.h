@@ -8,17 +8,17 @@ typedef void PlasmaCallback(void * arg);
 typedef void PlasmaDriverInitializer(PlasmaWindow * window, void * arg);
 
 typedef struct PlasmaWindowDriver {
-    PlasmaDriverInitializer * initialize;
-    PlasmaCallback * update;
+	PlasmaDriverInitializer * initialize;
+	PlasmaCallback * update;
 } PlasmaWindowDriver;
 
 typedef struct PlasmaWindowConfig {
-    const char * title;
-    int width, height;
+	const char * title;
+	int width, height;
 
-    const PlasmaWindowDriver * driver;
+	const PlasmaWindowDriver * driver;
 
-    int flags;
+	int flags;
 } PlasmaWindowConfig;
 
 extern const int plasmaWindow;

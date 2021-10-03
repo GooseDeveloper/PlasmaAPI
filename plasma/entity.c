@@ -4,8 +4,8 @@
 #include <stddef.h>
 
 struct PlasmaEntity {
-    const PlasmaEntityConfig * source;
-    PlasmaWindow * parent;
+	const PlasmaEntityConfig * source;
+	PlasmaWindow * parent;
 };
 
 const int plasmaEntity = sizeof(PlasmaEntity);
@@ -13,21 +13,21 @@ const int plasmaEntity = sizeof(PlasmaEntity);
 const PlasmaEntityConfig plasmaDefaultEntityConfig = { (PlasmaEntityCommon) { PLASMA_ENTITY_UNDEFINED } };
 
 static const PlasmaEntityDriver * const drivers[] = {
-    NULL, 
+	NULL, 
 
-    &plasmaBoxDriver
+	&plasmaBoxDriver
 };
 static const int numDrivers = sizeof(drivers) / sizeof(PlasmaEntityDriver *); 
 
 void plasmaCreateEntity(PlasmaWindow * window, PlasmaEntity * target, PlasmaEntityConfig * config)
 {
-    target->source = config;
-    target->parent = window;
+	target->source = config;
+	target->parent = window;
 
-    int entityType = config->common.type;
+	int entityType = config->common.type;
 
-    plasmaAssert(entityType <= numDrivers, PLASMA_FATAL "Invalid entity type!");
+	plasmaAssert(entityType <= numDrivers, PLASMA_FATAL "Invalid entity type!");
 
-    config->common.driver = drivers[entityType];
+	config->common.driver = drivers[entityType];
 }
 

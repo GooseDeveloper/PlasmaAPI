@@ -3,7 +3,7 @@
 #include <plasma/plasma.h>
 
 #define PLASMA_ENTITY_UNDEFINED 0
-#define PLASMA_ENTITY_BOX       1
+#define PLASMA_ENTITY_BOX	    1
 
 typedef struct PlasmaEntity PlasmaEntity;
 
@@ -13,13 +13,13 @@ typedef void PlasmaEntityInitializer(PlasmaEntity * entity, const PlasmaEntityCo
 typedef void PlasmaEntityCallback(PlasmaEntity * entity);
 
 typedef struct PlasmaEntityDriver {
-    PlasmaEntityInitializer * initialize;
-    PlasmaEntityCallback * update;
+	PlasmaEntityInitializer * initialize;
+	PlasmaEntityCallback * update;
 } PlasmaEntityDriver;
 
 typedef struct PlasmaEntityCommon { 
-    union {
-        const PlasmaEntityDriver * driver;
-        int type;
-    };
+	union {
+	    const PlasmaEntityDriver * driver;
+	    int type;
+	};
 } PlasmaEntityCommon;
