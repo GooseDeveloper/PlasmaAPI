@@ -6,14 +6,14 @@ PLASMALIBS = $(shell pkg-config --libs sdl2)
 
 LDLIBS = $(PLASMA)
 
-BINS = $(PLASMA) tests/hello tests/zero tests/window
+BINS = $(PLASMA) tests/hello tests/zero tests/window tests/box
 
 all: $(BINS)
 
 debug: CFLAGS += -g
 debug: $(BINS)
 
-$(PLASMA): plasma/plasma.o plasma/graphics.o plasma/sdl.o
+$(PLASMA): plasma/plasma.o plasma/graphics.o plasma/sdl.o plasma/entity.o plasma/box.o
 	$(CC) $^ -shared -o $@ $(PLASMALIBS)
 
 clean:
