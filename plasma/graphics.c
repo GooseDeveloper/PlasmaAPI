@@ -8,11 +8,11 @@
 #include <stddef.h>
 
 struct PlasmaWindow {
-    PlasmaWindowConfig * source;
+	PlasmaWindowConfig * source;
 
 	bool active;
 
-    char payload[];
+	char payload[];
 };
 
 const int plasmaWindow = sizeof(PlasmaWindow);
@@ -30,22 +30,22 @@ void plasmaCreateWindow(PlasmaWindow * target, PlasmaWindowConfig * config)
 
 	config->driver->initialize(target, target->payload);
 
-    puts(PLASMA_INFO "Created window.");
+	puts(PLASMA_INFO "Created window.");
 }
 
 void plasmaExecuteWindow(PlasmaWindow * window, PlasmaCallback * update, void * arg)
 {
 	plasmaAssert(window, PLASMA_FATAL "Cannot execute NULL window!");
 
-    puts(PLASMA_INFO "Executing window...");
+	puts(PLASMA_INFO "Executing window...");
 
 	const PlasmaWindowDriver * driver = window->source->driver;
 
-    do {
+	do {
 		driver->update(window->payload);
 
-        if(update) update(arg);
-    } while(window->active);
+	    if(update) update(arg);
+	} while(window->active);
 }
 
 void plasmaDeactivateWindow(PlasmaWindow * window)

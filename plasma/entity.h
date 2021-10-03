@@ -5,12 +5,12 @@
 #include <plasma/box.h>
 
 #define PLASMA_ENTITY_UNDEFINED 0
-#define PLASMA_ENTITY_BOX       1
+#define PLASMA_ENTITY_BOX	   1
 
 union PlasmaEntityConfig {
-    PlasmaEntityCommon common;
+	PlasmaEntityCommon common;
 
-    PlasmaBoxConfig box;
+	PlasmaBoxConfig box;
 };
 
 extern const int plasmaEntity;
