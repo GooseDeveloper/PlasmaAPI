@@ -3,7 +3,11 @@
 #include <plasma/plasma.h>
 
 #define PLASMA_ENTITY_UNDEFINED 0
+<<<<<<< HEAD
 #define PLASMA_ENTITY_BOX	    1
+=======
+#define PLASMA_ENTITY_BOX	   1
+>>>>>>> 2cf6e3b6f2147218131ee073c156a81a693a2a7e
 
 typedef struct PlasmaEntity PlasmaEntity;
 
